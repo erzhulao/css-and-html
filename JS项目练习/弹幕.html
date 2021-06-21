@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    function sendMessage(){
+        var oSpan = document.createElement("span")//创建一个元素
+        oSpan.innerHTML = $("text").value;
+        $("content").appendChild(oSpan);
+        oSpan.style.top = Math.floor(Math.random()*280) + "px";
+        var oSpanWidth = oSpan.offsetWidth;
+        startMove(oSpan,{"left":-oSpanWidth},function(){
+            oSpan.remove();
+        })
+        $("text").value = "";
+    
+
+    }
+    $("jkniub3").onclick = function(){
+        sendMessage();
+    }
+
+    document.onkeydown = function(e){
+        var e = e || event;
+        if(e.keyCode == 13){
+            sendMessage();
+        }
+    }
+    $("hideCon").onclick = function(){
+        $("content").style.opacity = "0";
+    }
+
+    $("display").onclick = function(){
+        $("content").style.opacity = "1d";
+    }
+</script>
+<body>
+    <div class="jkniub" style="background-color: green;width: 800px;height: 800px;"></video></div>
+    <input type="submit" id="jkniub2">
+    <input type="text" id="jkniub3">
+</body>
+</html>

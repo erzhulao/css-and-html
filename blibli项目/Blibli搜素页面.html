@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="blibli.css">
+    <style>
+        *{margin: 0px;padding: 0px;}
+        .box{width: 400px;height: 400px;margin:250px auto;perspective: 600px;}
+        .box ul{width: 300px;height:300px;margin: 50px;position: relative;transform-style: preserve-3d;animation: move 2s infinite linear;}
+        .box ul li{width: 100px;height:85px;list-style:none;font-size: 50px;color: #fff;text-align: center;line-height: 300px;position: absolute;transform-origin: center center 150px;}
+        .box ul li:nth-of-type(1){background-image: url(../bilibil图片/Snipaste_2021-06-08_09-25-28.png); opacity: 0.4;}
+        .box ul li:nth-of-type(2){background-color: #fb7299;opacity: 0.4;transform: translateX(300px) rotateY(-90deg);transform-origin: left;}
+        .box ul li:nth-of-type(3){background-color: #fb7299;opacity: 0.4;transform: translateX(-300px) rotateY(90deg);transform-origin: right;}
+        .box ul li:nth-of-type(4){background-color: #fb7299;opacity: 0.4;transform: translateY(-300px) rotateX(-90deg);transform-origin: bottom;}
+        .box ul li:nth-of-type(5){background-color: #fb7299;opacity: 0.4;transform: translateY(300px) rotateX(90deg);transform-origin: top;}
+        .box ul li:nth-of-type(6){background-color:  #fb7299;opacity: 0.4;transform: translateZ(300px);}
+        @keyframes move{
+            from{transform:rotateY(0deg);}
+            to{transform:rotateY(360deg);}
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="head">
+        <div style="display:block;display: flex;"><img style="width: 100px;height: 60px;"
+                src="../bilibil图片/Snipaste_2021-06-03_11-54-15.png">
+            <div
+                style="display: flex; letter-spacing: 3px;height: 60px;line-height: 60px;display: inline-block;vertical-align: middle;">
+                主站 番剧 游戏中心 直播 会员购 漫画 赛事 BW <img style="line-height: 60px;vertical-align: top;margin-top: 13px;"
+                    src="../bilibil图片/手机.png">下载APP</div>
+        </div>
+        <div style="line-height: 60px;">
+            <input type="text" style="width: 450px;height: 30px;"><img style="vertical-align: top;margin-top: 13px;"
+                src="../bilibil图片/Snipaste_2021-06-07_15-44-33.png">
+        </div>
+        <div style="letter-spacing: 3px;display: flex;"><span style="color: #00a1d6;margin-right: 10px;">
+                <h2>登录</h2>
+            </span>大会员 消息 动态 收藏 历史记录 创作中心<div
+                style="margin-top:10px; width: 100px;height: 35px;background-color: #fb7299;line-height: 35px;text-align: center;">
+                <h1 style="color: white;font-size: 30px;">投稿</h1>
+            </div>
+        </div>
+    </div>
+    <div class="backgroundhead"></div>
+    <div class="sousuokuang">
+        <img style="margin: 50px 430px;" src="../bilibil图片/Snipaste_2021-06-08_09-24-37.png">
+    </div>
+    <div class="zhongjian">
+        <div><input style="margin: 50px 240px;width: 700px;height: 50px;" type="text" value="请输入标题">
+        </div>
+    
+        <div class="box">
+            <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+           </ul>
+        </div>
+    </div>
+    
+    </body>
+</html>

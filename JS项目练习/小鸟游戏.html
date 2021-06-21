@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #res h2 {
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        #res img {
+            width: 50px;
+            height: 50px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 50%;
+
+        }
+    </style>
+    <script>
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+
+
+        var img = new Image();
+
+
+    </script>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="400"></canvas>
+    <div class="mark" id="mark"></div>
+    <div class="res" id="res">
+        <h2>得分:100</h2>
+        <img src="./JS图片/金牌.png">
+    </div>
+
+</body>
+<script>
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    var birdX = 200;
+    var birdY = 100;
+    var birdTimer = null;
+
+    var img = new Image();
+    img.src = "JS图片/小鸟.png"
+    img.onload = function () {
+        if (birdTimer == null) {
+            birdTimer = setInterval(function () {
+                if (birdY <= 330) {
+                    birdY++
+                }
+                context.clearRect(0, 0, 800, 400);
+                context.drawImage(img, birdX, birdY);
+            }, 10)
+        }
+        document.onmousedown = function () {
+            // 想让翅膀往上添加个图片就可以  因为每次图片都要重新加载  所以要在onload后面加个东西防止它重新加载
+            birdY = birdY - 30;
+            img.src = "JS图片/小鸟.png"
+
+        }
+    }
+
+    document.onmouseup = function () {
+        img.src = "JS图片/金牌.png"
+    }
+
+    var columnA = new Image();
+    var columnB = new Image();
+    columnA.src = "JS图片/柱子1.png";
+    columnB.src = "JS图片/柱子2.png";
+    var columnTimer = null;
+    var columnArr = [];
+
+    function creatColumn() {
+        columnTimer = setInterval(function () {
+            var column = {}
+            column.positionX = 800;
+            column.positionY = -Math.round(Math.random() * 100 + 100); //这里这个负值是向上移动随机数值  然后下面那个柱子凸出来的空白部分   可以在绘制的时候后面加数值填充
+            column.imgA= new Image();
+            column.imgB = new Image();
+            column.imgA.src = "JS图片/柱子1.png";
+            column.imgB.src = "JS图片/柱子2.png";
+            colum.id = new Date().getDate();
+            columnArr.push(colum);
+            drawColumn();
+        },1500)
+
+    }
+    craetColumn();
+    function drawColumn(){
+        for(var i = 0;i < columnArr.length;i++){
+            columnArr[i].positionX--;
+            context.drawImage(columnArr[i].imgA,columnArr[i].positionX,columnArr[i].positionY);
+            context.drawImage(columnArr[i].imgB,columnArr[i].positionX,columnArr[i].positionY + 350);     
+        }
+    }
+
+
+</script>
+
+</html>

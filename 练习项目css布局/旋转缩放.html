@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        div{width: 400px;height: 400px;border-radius: 50%;margin: 0 auto;margin-top: 100px;position: relative;}
+        div p img{width:400px;height:400px;border-radius: 50%;position: absolute;text-align: center;line-height: 400px;z-index: 1;transition: 1s;}
+        div h1{width:400px;height: 400px;border-radius: 50%;background-color: black;position: absolute;text-align: center;line-height: 400px;transition: 1s;}
+        div:hover img{transform: scale(0,0) rotate(360deg);}
+        div:hover h1{transform: scale(1.1);}
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            <img style="width:400px;height:400px" src="./images/微信图片_20210603180445.jpg">
+        </p>
+        <h1>文字</h1>
+    </div>
+    
+</body>
+</html>

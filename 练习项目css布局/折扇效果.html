@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        .box{width: 600px;height: 230px;margin: 300px auto;
+        border-bottom: 2px solid black;position: relative;}
+        .box div{width: 60px;height:200px;position: absolute;left: 250px;box-shadow: 3px 3px 5px;transform-origin: center bottom;transition: all 2s linear;}
+        .box div:nth-of-type(1){background-color: red;}
+        .box div:nth-of-type(2){background-color: saddlebrown;}
+        .box div:nth-of-type(3){background-color: sandybrown;}
+        .box div:nth-of-type(4){background-color:darkgray;}
+        .box div:nth-of-type(5){background-color:firebrick}
+        .box div:nth-of-type(6){background-color: seagreen}
+        .box div:nth-of-type(7){background-color: black}
+        .box div:nth-of-type(8){background-color: black;}
+        .box div:nth-of-type(9){background-color: seagreen;}
+        .box div:nth-of-type(10){background-color: firebrick;}
+        .box div:nth-of-type(11){background-color: darkgray;}
+        .box div:nth-of-type(12){background-color: sandybrown;}
+        .box div:nth-of-type(13){background-color: saddlebrown;}
+        .box:hover div:nth-of-type(1){transform:rotate(15deg);}
+        .box:hover div:nth-of-type(2){transform:rotate(30deg);}
+        .box:hover div:nth-of-type(3){transform:rotate(45deg);}
+        .box:hover div:nth-of-type(4){transform:rotate(60deg);}
+        .box:hover div:nth-of-type(5){transform:rotate(75deg);}
+        .box:hover div:nth-of-type(6){transform:rotate(90deg);}
+        .box:hover div:nth-of-type(8){transform:rotate(-15deg);}
+        .box:hover div:nth-of-type(9){transform:rotate(-30deg);}
+        .box:hover div:nth-of-type(10){transform:rotate(-45deg);}
+        .box:hover div:nth-of-type(11){transform:rotate(-60deg);}
+        .box:hover div:nth-of-type(12){transform:rotate(-75deg);}
+        .box:hover div:nth-of-type(13){transform:rotate(-90deg);}
+        
+        
+
+    </style>
+    
+</head>
+<body>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>6</div>
+        <div>5</div>
+        <div>4</div>
+        <div>3</div>
+        <div>2</div>
+        <div>1</div>
+    </div>
+    
+</body>
+</html>

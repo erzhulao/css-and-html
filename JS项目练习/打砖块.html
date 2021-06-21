@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function $(id){
+            return document.getElementById(id);
+        }
+
+        function rand(max,min){
+            return Math.floor(Math.random()*(max-min+1)+min);     
+        }
+        function BlockBreak(){
+            this.box = $("ibox");
+            this.list = document.getElementsByTagName("li");
+            this.board = $("board");
+            this.ball = $("bubble");
+            this.fx = 1
+            this.fy = 2
+            this.leftInit = 0
+            this.topInit = 0
+        }
+        BlockBreak.prototype.init = function(){ //给对象添加一个对象
+            for(var i = 0 ; i < this.list.length;i++){
+                tish.list[1].style.backgroundColor = "rgb("+rand(0,255)+","+rand(0,255)+","+rand(0,255)+")";
+                var x = this.leftInit * this.list[0].offsetWidth;
+                var y = this.topInit;
+                this.list[i].style.left = x + "px";
+                this.list[i].style.top = y + "PX";
+                this.leftInit++;
+                if((i+1)%10 == 0){
+                    this.leftInit = 0;
+                    this .topInit += this.list[0].offsetHeight
+                }
+            }
+
+        }
+        function keydowan(){
+            document.onkeydown = function(e){
+                var that = this;
+                var e = e || event;
+                if(e.keyCode == 37){
+                    that.board.style.left = that.offsetLeft -15 + "px"; //offsetLeft 是当前位置向左移动
+                    if(that.offsetLeft <= 0){
+                        that.board.style.left = 0;
+                    }
+                }
+
+                if(e.keyCode == 39){
+                    that.board.style.left = that.offsetRight +15 + "px";
+                    if(that.offsetRight <= 0){
+                        that.board.style.right = 0;
+                    }
+                    
+                }
+            }
+        }
+
+        function move(){
+            var timer = null;
+            var that = this;
+            timer = setInterval(function(){
+                that.ball.style.left = that.ball.offsetLeft + that.fx + "px"
+                that.ball.style.top = that.ball.offsetHeight + that.fy + "px"
+
+            })
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
